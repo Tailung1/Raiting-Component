@@ -1,7 +1,7 @@
-import React from "react";
+
 import { useEffect } from "react";
 
-export default function Result({ selectedRaiting }) {
+export default function Result( selectedRaiting:number ) {
   useEffect(() => {
     document.body.style.backgroundColor = "#131518";
     document.body.style.display = "flex";

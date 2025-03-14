@@ -1,10 +1,14 @@
 import { useEffect } from "react";
-
+interface ITypes {
+  selectedRaiting: number;
+  setSelectedRaiting: (value: number) => void; 
+  setIsSelected: (value: boolean) => void; 
+}
 export default function Rating({
   selectedRaiting,
   setSelectedRaiting,
   setIsSelected,
-}) {
+}:ITypes) {
   useEffect(() => {
     document.body.style.backgroundColor = "#131518";
     document.body.style.display = "flex";
@@ -36,7 +40,7 @@ export default function Rating({
           <button
             className=' focus:bg-[#FC7614] focus:text-[#FFF] hover:bg-[#7C8798] hover:text-[#FFF] rounded-[50%] bg-[#262E38] text-[#7C8798] py-[14px] px-[22px] text-[16px] font-bold leading-[24px] tracking-[0.2px]'
             key={num}
-            onClick={() => setSelectedRaiting(num)}
+            onClick={() => setSelectedRaiting(+num)}
           >
             {num}
           </button>
